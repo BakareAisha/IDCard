@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="id.css">
+</head>
+
+<body>
+    <div class="side-arrow" onclick="showPreviousCard()">&#10094;</div>
+    <div class="id-card">
+        <div>
+            <img src="./images/sqi_image-removebg-preview.png" alt="">
+        </div>
+        <div class="header">
+            <h3>SQI COLLEGE OF ICT</h3>
+            <p>IBADAN</p>
+        </div>
+        <div class="header2">
+            <h5>STUDENT</h5>
+        </div>
+
+        <div class="photo">
+            <img src="./images/1girl-removebg-preview.png" id="student-photo" alt="User Photo">
+        </div>
+        <div class="info">
+            <h3 id="student-name">Bakare Aishat Omobolaji</h3>
+            <h5 id="student-course"> SOFTWARE ENGINEERING</h5>
+            <h6><strong>Student ID:</strong> <span id="student-id">220713</span></h6>
+        </div>
+
+        <div class="footer">
+            <p>edu.sqi.ng</p>
+        </div>
+    </div>
+    <div class="side-arrow2" onclick="showNextCard()">&#10095;</div>
+</body>
+
+</html>
+<script>
+       const students = [
+    {
+        name: "Bakare Aishat Omobolaji",
+        course: "SOFTWARE ENGINEERING",
+        id: "220713",
+        photo: "./images/1girl-removebg-preview.png"
+    },
+    {
+        name: "Adeyemi Fatai Olawale",
+        course: "DATA SCIENCE",
+        id: "220832",
+        photo: "./images/2boy-removebg-preview.png"
+    },
+    {
+        name: "Musa Halimat Ajoke",
+        course: "UI/UX DESIGN",
+        id: "221045",
+        photo: "./images/2girl-removebg-preview.png"
+    },
+    {
+        name: "Olamide David O.",
+        course: "CYBER SECURITY",
+        id: "221097",
+        photo: "./images/3boy-removebg-preview.png"
+    },
+    {
+        name: "Ifeoluwa Adebayo",
+        course: "COMPUTER ENGINEERING",
+        id: "221134",
+        photo: "./images/3girl-removebg-preview.png"
+    },
+    {
+        name: "Kehinde Ayomide",
+        course: "NETWORKING",
+        id: "221206",
+        photo: "./images/4boy-removebg-preview.png"
+    },
+    {
+        name: "Zainab Yusuf",
+        course: "MOBILE APP DEVELOPMENT",
+        id: "221250",
+        photo: "./images/4girl-removebg-preview.png"
+    },
+    {
+        name: "Chukwu Emeka Uche",
+        course: "SOFTWARE ENGINEERING",
+        id: "221298",
+        photo: "./images/2boy-removebg-preview.png"
+    }
+];
+
+
+    let currentIndex = 0;
+
+    function showNextCard() {
+        currentIndex++;
+        if (currentIndex >= students.length) {
+            currentIndex = 0; 
+        }
+
+        const student = students[currentIndex];
+        document.getElementById("student-name").textContent = student.name;
+        document.getElementById("student-course").textContent = student.course;
+        document.getElementById("student-id").textContent = student.id;
+         document.getElementById("student-photo").src = student.photo;
+    }
+    function showPreviousCard() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = students.length - 1;
+        }
+
+        const student = students[currentIndex];
+        document.getElementById("student-name").textContent = student.name;
+        document.getElementById("student-course").textContent = student.course;
+        document.getElementById("student-id").textContent = student.id;
+         document.getElementById("student-photo").src = student.photo;
+    }
+
+</script>
