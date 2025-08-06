@@ -92,31 +92,29 @@
 ];
 
 
-    let currentIndex = 0;
-
+   let currentIndex = 0;
+    function displayCard() {
+        document.getElementById("student-name").textContent = students[currentIndex].name;
+        document.getElementById("student-course").textContent = students[currentIndex].course;
+        document.getElementById("student-id").textContent = students[currentIndex].id;
+        document.getElementById("student-photo").src = students[currentIndex].photo;
+    }
+    displayCard()
     function showNextCard() {
         currentIndex++;
         if (currentIndex >= students.length) {
-            currentIndex = 0; 
+            currentIndex = 0;
         }
-
-        const student = students[currentIndex];
-        document.getElementById("student-name").textContent = student.name;
-        document.getElementById("student-course").textContent = student.course;
-        document.getElementById("student-id").textContent = student.id;
-         document.getElementById("student-photo").src = student.photo;
+        displayCard();
     }
     function showPreviousCard() {
         currentIndex--;
         if (currentIndex < 0) {
             currentIndex = students.length - 1;
         }
-
-        const student = students[currentIndex];
-        document.getElementById("student-name").textContent = student.name;
-        document.getElementById("student-course").textContent = student.course;
-        document.getElementById("student-id").textContent = student.id;
-         document.getElementById("student-photo").src = student.photo;
+        displayCard();
     }
+
+
 
 </script>
